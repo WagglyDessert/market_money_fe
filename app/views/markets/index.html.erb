@@ -1,0 +1,33 @@
+<body>
+  <h3>Markets</h3>
+  <div class="four-columns">
+    <div class="market_sub">
+      <b>Name</b>
+      <% @data[:data].each do |market| %>
+        <p><%= market[:attributes][:name] %></p>
+      <% end %>
+    </div>
+
+    <div class="market_sub">
+      <b>City</b>
+      <% @data[:data].each do |market| %>
+        <p><%= market[:attributes][:city] %></p>
+      <% end %>
+    </div>
+
+    <div class="market_sub">
+      <b>State</b>
+      <% @data[:data].each do |market| %>
+        <p><%= market[:attributes][:state] %></p>
+      <% end %>
+    </div>
+
+    <div class="market_sub">
+      <b>More Info</b>
+      <% @data[:data].each do |market| %>
+      <div class="button-container">
+        <p><%= button_to "More Info", "markets/#{market[:id]}" %></p>
+      <% end %>
+    </div>
+  </div>
+</body>

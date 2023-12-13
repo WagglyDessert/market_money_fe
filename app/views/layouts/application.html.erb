@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>MarketMoneyFe</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%= javascript_importmap_tags %>
+  </head>
+
+  <body>
+    <style>
+      /*Merchant Styles*/
+      body {
+      font-family: Arial, sans-serif;
+      }
+      .four-columns{
+        display:flex;
+      }
+
+      .four-columns > * {
+        width: 25%;
+        padding: 1rem;
+      }
+
+      .market_sub {
+        font-family: Arial;
+        background-color: mediumseagreen;
+        border-top: 2px solid #622583;
+        padding: 2px 200px;
+        text-align: center;
+        float: left;
+      }
+
+      .button-container {
+        white-space: nowrap; 
+        /* Prevent line breaks */
+      }
+
+      .button-container form {
+        display: inline-block; 
+        /* Display the forms horizontally */
+        margin-right: 4px; 
+        /* Add some spacing between the buttons */
+      }
+    </style>
+    <%= yield %>
+  </body>
+</html>
