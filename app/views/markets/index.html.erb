@@ -26,7 +26,7 @@
       <b>More Info</b>
       <% @data[:data].each do |market| %>
       <div class="button-container">
-        <p><%= button_to "More Info", "markets/#{market[:id]}" %></p>
+        <p><%= button_to "More Info", market_path(market[:id]), method: :get %></p>
       <% end %>
     </div>
   </div>
