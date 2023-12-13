@@ -21,5 +21,11 @@ class MarketsController < ApplicationController
     #require 'pry'; binding.pry
     #send back requested information
   end
+
+  def show
+    market_id = params[:id]
+    response = Faraday.get("http://127.0.0.1:3000/api/v0/markets/#{market_id}")
+    @data = JSON.parse(response.body, symbolize_names: true)
+  end
   
 end
