@@ -53,7 +53,7 @@ RSpec.describe "Find Markets", type: :feature do
            }).
          to_return(status: 200, body: json_response2, headers: {})
 
-         json_response3 = File.read("spec/fixtures/vendors/charcuterie_corner.json")
+         json_response3 = File.read("spec/fixtures/vendors/14&U_vendors.json")
          stub_request(:get, "http://127.0.0.1:3000/api/v0/markets/322458/vendors").
          with(
            headers: {
@@ -72,7 +72,7 @@ RSpec.describe "Find Markets", type: :feature do
       expect(page).to have_content("Vendors at our Market")
     end
 
-    it "can visit individual market's show page" do 
+    it "displays list of vendors on individual market's show page" do 
       json_response1 = File.read("spec/fixtures/markets/markets.json")
       stub_request(:get, "http://127.0.0.1:3000/api/v0/markets").
          with(
@@ -95,7 +95,7 @@ RSpec.describe "Find Markets", type: :feature do
            }).
          to_return(status: 200, body: json_response2, headers: {})
 
-      json_response3 = File.read("spec/fixtures/vendors/charcuterie_corner.json")
+      json_response3 = File.read("spec/fixtures/vendors/14&U_vendors.json")
       stub_request(:get, "http://127.0.0.1:3000/api/v0/markets/322458/vendors").
       with(
         headers: {
