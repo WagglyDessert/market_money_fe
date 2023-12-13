@@ -1,6 +1,8 @@
 <h3><%= @data[:data][:attributes][:name]%></h3>
-<%=@data[:data][:attributes][:street]%><br>
-<%=[@data[:data][:attributes][:city], @data[:data][:attributes][:state], @data[:data][:attributes][:zip]].compact.join(', ')%><br>
+<%= @data[:data][:attributes][:street] %><br>
+<%= [@data[:data][:attributes][:city], @data[:data][:attributes][:state], @data[:data][:attributes][:zip]].compact.join(', ')%><br>
 <h4>Vendors at our Market:</h4>
-
+<% @vendor_data[:data].each do |vendor| %>
+  <%= link_to vendor[:attributes][:name], vendor_path(vendor[:id]) %>
+<%end%>
 
