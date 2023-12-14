@@ -4,7 +4,7 @@
   <%= [market.city, market.state, market.zip].compact.join(', ')%><br>
 <%end%>
 <h4>Vendors at our Market:</h4>
-<% @vendor_data[:data].each do |vendor| %>
-  <%= link_to vendor[:attributes][:name], vendor_path(vendor[:id]) %>
+<% @vendor_facade.each do |vendor| %>
+  <%= link_to vendor.name, vendor_path(vendor.id) %>
 <%end%>
 

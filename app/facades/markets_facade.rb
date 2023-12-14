@@ -23,4 +23,12 @@ class MarketsFacade
     end
   end
 
+  def market_vendors(id)
+    response = @service.market_vendors(id)
+    #require 'pry'; binding.pry
+    response[:data].map do |v|
+      Vendor.new(v)
+    end
+  end
+
 end
