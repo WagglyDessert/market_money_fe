@@ -3,30 +3,30 @@
   <div class="four-columns">
     <div class="market_sub">
       <b>Name</b>
-      <% @data[:data].each do |market| %>
-        <p><%= market[:attributes][:name] %></p>
+      <% @facade.each do |market| %>
+        <p><%= market.name %></p>
       <% end %>
     </div>
 
     <div class="market_sub">
       <b>City</b>
-      <% @data[:data].each do |market| %>
-        <p><%= market[:attributes][:city] %></p>
+      <% @facade.each do |market| %>
+        <p><%= market.city %></p>
       <% end %>
     </div>
 
     <div class="market_sub">
       <b>State</b>
-      <% @data[:data].each do |market| %>
-        <p><%= market[:attributes][:state] %></p>
+      <% @facade.each do |market| %>
+        <p><%= market.state %></p>
       <% end %>
     </div>
 
     <div class="market_sub">
       <b>More Info</b>
-      <% @data[:data].each do |market| %>
+      <% @facade.each do |market| %>
       <div class="button-container">
-        <p><%= button_to "More Info", market_path(market[:id]), method: :get %></p>
+        <p><%= button_to "More Info", market_path(market.id), method: :get %></p>
       <% end %>
     </div>
   </div>
